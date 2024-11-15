@@ -19,16 +19,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  list,
+  image,
 }: Readonly<{
-  children: React.ReactNode;
+  list: React.ReactNode;
+  image: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex gap-2">
+          <div className="w-[300px]">{list}</div>
+          <div>{image}</div>
+        </div>
       </body>
     </html>
   );
